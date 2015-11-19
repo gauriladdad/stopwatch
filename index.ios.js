@@ -14,7 +14,8 @@ var StopWatch = React.createClass({
         return {
             timeElapsed: null,
             running: false,
-            startTime: null
+            startTime: null,
+            laps: []
         }
     },
     render: function() {
@@ -33,12 +34,20 @@ var StopWatch = React.createClass({
             </View>
 
             <View style={styles.footer}> 
-              <Text>
-                I am a list of Laps
-              </Text>
+              {this.laps()}
             </View>
 
         </View>
+    },
+
+    laps: function() {
+      //  index will give which item number we are on
+        return this.state.laps.map(function(time, index) {
+          return <View>
+              <Text> Lap #{index + 1} </Text>
+              <Text> {formatTime(time)} </Text>
+            </View>
+        });
     },
 
     startStopButton: function() {
@@ -54,6 +63,7 @@ var StopWatch = React.createClass({
               </Text>
             </TouchableHighlight>
     },
+
     lapButton: function() {
         return <TouchableHighlight 
                   underlayColor="gray" 
@@ -64,6 +74,7 @@ var StopWatch = React.createClass({
               </Text>
             </TouchableHighlight>
     },
+
     handleStartPress: function() {
 
         if (this.state.running) {
@@ -81,11 +92,14 @@ var StopWatch = React.createClass({
           });  
         }, 30);                      
     },
+
     handleLapPress: function() {
         var lap = this.state.timeElapsed;
 
         this.setState({
-            startTime: new Date()
+            startTime: new Date(),
+            //it's concat not push = to not modify state directly. concat return a new array
+            laps: this.state.laps.concat([lap])
         });
     }
 });
