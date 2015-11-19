@@ -43,9 +43,9 @@ var StopWatch = React.createClass({
     laps: function() {
       //  index will give which item number we are on
         return this.state.laps.map(function(time, index) {
-          return <View>
-              <Text> Lap #{index + 1} </Text>
-              <Text> {formatTime(time)} </Text>
+          return <View style={styles.lap}>
+              <Text style={styles.lapText}> Lap #{index + 1} </Text>
+              <Text style={styles.lapText}> {formatTime(time)} </Text>
             </View>
         });
     },
@@ -142,6 +142,13 @@ var styles = StyleSheet.create({
     },
     stopButton: {
       borderColor: "#CC0000"
+    },
+    lap: {
+      justifyContent: 'space-around',
+      flexDirection: 'row'
+    },
+    lapText: {
+      fontSize: 30
     }
 });
 
