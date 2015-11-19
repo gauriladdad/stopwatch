@@ -12,3 +12,6 @@ remember functions are specified as onPress={this.handleStartPress} ,
 there is no () after the function name
 
 node library => minutes-seconds-milliseconds is used to format timer.
+
+setInterval function whenever called returns an interval ID, can be used while invoking
+clearInterval.
