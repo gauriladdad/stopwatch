@@ -55,7 +55,10 @@ var StopWatch = React.createClass({
             </TouchableHighlight>
     },
     lapButton: function() {
-        return <TouchableHighlight style={styles.button}>
+        return <TouchableHighlight 
+                  underlayColor="gray" 
+                  style={styles.button}
+                  onPress={this.handleLapPress}>
               <Text>
                 Lap
               </Text>
@@ -77,6 +80,13 @@ var StopWatch = React.createClass({
               running: true
           });  
         }, 30);                      
+    },
+    handleLapPress: function() {
+        var lap = this.state.timeElapsed;
+
+        this.setState({
+            startTime: new Date()
+        });
     }
 });
 
