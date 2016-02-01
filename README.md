@@ -7,10 +7,10 @@ It makes use of node library => minutes-seconds-milliseconds for formatting of t
 
 ========= Tools used =========
 
-1. Github repository. 
-2. React-native
-3. Xcode
-4. Sublime editor
+1. React-native
+2. Xcode
+3. Sublime editor
+4. SourceTree
 
 ========= Device Support =========
 
