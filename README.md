@@ -1,20 +1,18 @@
 # stopwatch
 
-========= Project description ========= 
-
 This is stopwatch application created while learning react native.
 It makes use of node library => minutes-seconds-milliseconds for formatting of time displayed.
 
-========= Tools used =========
+### Tools used 
 
 1. React-native
 2. Xcode
 3. Sublime editor
 4. SourceTree
 
-========= Device Support =========
+###  Device Support
 
-This application works well on iOS platform.
+This application works well on iOS platform. The same has been tested with XCode.
 
 ========= Notes =========
 
